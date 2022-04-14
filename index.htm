@@ -6,6 +6,7 @@
     <title>Ubuntu Terminal</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
   <body>
@@ -18,18 +19,41 @@
             <button class="bar__button">&#9472;</button>
             <button class="bar__button">&#9723;</button>
           </div>
-          <p id="bar__user">fobabs@ubuntu: ~</p>
+          <div id="bar__user">
+            <p>user@ubuntu: ~</p>
+          </div>
+          <div></div>
+        </section>
+        <section>
+        <!-- Terminal Tabs -->
+            <div id="terminal__tabs">
+                <button class="terminal__tablink active" id="default__tablink" onclick="openTab(event, 'Tab1')">user@ubuntu: ~/ <strong>Tab1</strong></button>
+                <button class="terminal__tablink" onclick="openTab(event, 'Tab2')">user@ubuntu: ~/ <strong>Tab2</strong></button>
+                <button class="terminal__tablink" onclick="openTab(event, 'Tab3')">user@ubuntu: ~/ <strong>Tab3</strong></button>
+            </div>
         </section>
         <!-- Terminal Body -->
         <section id="terminal__body">
           <div id="terminal__prompt">
-            <span id="terminal__prompt--user">fobabs@ubuntu:</span>
+            <span id="terminal__prompt--user">user@ubuntu:</span>
             <span id="terminal__prompt--location">~</span>
             <span id="terminal__prompt--bling">$</span>
+            <span>&nbsp;</span>
+            <span id="terminal__prompt--text">coucou</span>
             <span id="terminal__prompt--cursor"></span>
+          </div>
+          <div id="Tab1" class="terminal__content">
+            Content of Tab1
+          </div>
+          <div id="Tab2" class="terminal__content">
+            Content of Tab2
+          </div>
+          <div id="Tab3" class="terminal__content">
+            Content of Tab3
           </div>
         </section>
       </div>
     </main>
+    <script type="text/javascript" src="tabs.js"></script>
   </body>
 </html>

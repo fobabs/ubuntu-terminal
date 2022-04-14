@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
+* {box-sizing: border-box;}
+
 body {
   background: linear-gradient(45deg, #57003f 0%,#f57453 100%);
   font-family: Ubuntu;
+  margin:0;
+  padding:0;
 }
 
 #container {
@@ -15,14 +19,14 @@ body {
 
 #terminal {
   width: 70vw;
-  height: 65vh;
+  height: 75vh;
   box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
 }
 
 #terminal__bar {
   display: flex;
-  width: 100%;
-  height: 30px;
+  /* width: 100%; */
+  height: 45px;
   align-items: center;
   padding: 0 8px;
   box-sizing: border-box;
@@ -43,8 +47,8 @@ body {
   padding: 0;
   margin-right: 5px;
   font-size: 8px;
-  height: 12px;
-  width: 12px;
+  height: 14px;
+  width: 14px;
   box-sizing: border-box;
   border: none;
   border-radius: 100%;
@@ -66,8 +70,41 @@ body {
 #bar__user {
   color: #d5d0ce;
   margin-left: 6px;
-  font-size: 14px;
+  align-items: center;
+  font-size: 17px;
   line-height: 15px;
+}
+
+#terminal__tabs {
+  overflow: hidden;
+  border: 0;
+  outline: 0;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.terminal__tablink {
+  background-color: #555;
+  border: 0;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  flex: 1;
+  border-bottom: 4px solid transparent;
+}
+
+.terminal__tablink strong {
+  color: #7eda28;
+}
+
+.terminal__tablink:hover {
+  background-color: #666;
+}
+
+.terminal__tablink.active {
+  background-color: #555;
+  border-bottom-color: #df4a16;
 }
 
 #terminal__body {
@@ -80,6 +117,7 @@ body {
 
 #terminal__prompt {
   display: flex;
+  padding: 5px;
 }
 #terminal__prompt--user {
   color: #7eda28;
@@ -87,8 +125,8 @@ body {
 #terminal__prompt--location {
   color: #4878c0;
 }
-#terminal__prompt--bling {
-  color: #dddddd;
+#terminal__prompt--bling, #terminal__prompt--text {
+  color: #eee;
 }
 #terminal__prompt--cursor {
   display: block;
@@ -96,6 +134,11 @@ body {
   width: 8px;
   margin-left: 9px;
   animation: blink 1200ms linear infinite;
+}
+
+.terminal__content {
+  color: #eee;
+  padding: 5px;
 }
 
 @keyframes blink {
